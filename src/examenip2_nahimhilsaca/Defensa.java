@@ -4,6 +4,8 @@
  */
 package examenip2_nahimhilsaca;
 
+import static examenip2_nahimhilsaca.Portero.rng;
+
 /**
  *
  * @author nahim
@@ -12,6 +14,8 @@ public class Defensa extends Jugador {
     private int fisico;
     private int ritmo;
     private int entrada;
+    private int random_pos = rng.nextInt(12)+1;
+    private int random_nopos= rng.nextInt(5)+1;
 
     public Defensa() {
         super();
@@ -29,6 +33,9 @@ public class Defensa extends Jugador {
     }
 
     public void setFisico(int fisico) {
+        while (fisico<70) {            
+            fisico=random_pos*12;
+        }
         this.fisico = fisico;
     }
 
@@ -37,6 +44,9 @@ public class Defensa extends Jugador {
     }
 
     public void setRitmo(int ritmo) {
+        while (ritmo<70) {            
+            ritmo=random_pos*12;
+        }
         this.ritmo = ritmo;
     }
 
@@ -45,6 +55,9 @@ public class Defensa extends Jugador {
     }
 
     public void setEntrada(int entrada) {
+        while (entrada<70) {            
+            entrada=random_pos*12;
+        }
         this.entrada = entrada;
     }
 
@@ -53,6 +66,7 @@ public class Defensa extends Jugador {
     }
 
     public void setAgarre(int agarre) {
+        agarre= random_nopos*13;
         this.agarre = agarre;
     }
 
@@ -61,6 +75,7 @@ public class Defensa extends Jugador {
     }
 
     public void setLanzamiento(int lanzamiento) {
+        lanzamiento= random_nopos*13;
         this.lanzamiento = lanzamiento;
     }
 
@@ -69,6 +84,7 @@ public class Defensa extends Jugador {
     }
 
     public void setVision(int vision) {
+        vision= random_nopos*13;
         this.vision = vision;
     }
 
@@ -77,6 +93,7 @@ public class Defensa extends Jugador {
     }
 
     public void setPassing(int passing) {
+        passing= random_nopos*13;
         this.passing = passing;
     }
 
@@ -85,6 +102,7 @@ public class Defensa extends Jugador {
     }
 
     public void setRegate(int regate) {
+        regate= random_nopos*13;
         this.regate = regate;
     }
 
@@ -93,6 +111,7 @@ public class Defensa extends Jugador {
     }
 
     public void setDisparo(int disparo) {
+        disparo= random_nopos*13;
         this.disparo = disparo;
     }
 
@@ -111,17 +130,18 @@ public class Defensa extends Jugador {
     }
 
     
-    @Override
-    public void poscion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+  
 
     @Override
-    public void no_posicion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int rating() {
+        int ratio;
+        Defensa p = new Defensa();
+        ratio=(p.getAgarre()+p.getDisparo()+p.getLanzamiento()+p.getFisico()+p.getRitmo()+p.getEntrada()+p.getVision()+p.getPassing()+p.getRegate())/9;
+        
+        setRating(ratio);
+        return ratio;
+    
+    
     }
-    
-    
-    
     
 }

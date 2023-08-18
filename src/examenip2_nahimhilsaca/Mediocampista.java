@@ -4,6 +4,8 @@
  */
 package examenip2_nahimhilsaca;
 
+import static examenip2_nahimhilsaca.Portero.rng;
+
 /**
  *
  * @author nahim
@@ -12,6 +14,8 @@ public class Mediocampista extends Jugador {
     private int vision;
     private int passing;
     private int regate;
+    private int random_pos = rng.nextInt(12)+1;
+    private int random_nopos= rng.nextInt(5)+1;
 
     public Mediocampista() {
         super();
@@ -25,10 +29,14 @@ public class Mediocampista extends Jugador {
     }
 
     public int getVision() {
+        
         return vision;
     }
 
     public void setVision(int vision) {
+                while (vision<70) {            
+            vision=random_pos*12;
+        }
         this.vision = vision;
     }
 
@@ -37,6 +45,9 @@ public class Mediocampista extends Jugador {
     }
 
     public void setPassing(int passing) {
+                while (passing<70) {            
+           passing=random_pos*12;
+        }
         this.passing = passing;
     }
 
@@ -45,6 +56,9 @@ public class Mediocampista extends Jugador {
     }
 
     public void setRegate(int regate) {
+                while (regate<70) {            
+            regate=random_pos*12;
+        }
         this.regate = regate;
     }
 
@@ -53,6 +67,7 @@ public class Mediocampista extends Jugador {
     }
 
     public void setAgarre(int agarre) {
+         agarre= random_nopos*13;
         this.agarre = agarre;
     }
 
@@ -61,6 +76,7 @@ public class Mediocampista extends Jugador {
     }
 
     public void setLanzamiento(int lanzamiento) {
+         lanzamiento= random_nopos*13;
         this.lanzamiento = lanzamiento;
     }
 
@@ -69,6 +85,7 @@ public class Mediocampista extends Jugador {
     }
 
     public void setFisico(int fisico) {
+         fisico= random_nopos*13;
         this.fisico = fisico;
     }
 
@@ -77,6 +94,7 @@ public class Mediocampista extends Jugador {
     }
 
     public void setRitmo(int ritmo) {
+         ritmo= random_nopos*13;
         this.ritmo = ritmo;
     }
 
@@ -85,6 +103,7 @@ public class Mediocampista extends Jugador {
     }
 
     public void setEntrada(int entrada) {
+         entrada= random_nopos*13;
         this.entrada = entrada;
     }
 
@@ -93,6 +112,7 @@ public class Mediocampista extends Jugador {
     }
 
     public void setDisparo(int disparo) {
+         disparo= random_nopos*13;
         this.disparo = disparo;
     }
 
@@ -111,14 +131,15 @@ public class Mediocampista extends Jugador {
     
     
 
-    @Override
-    public void poscion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     @Override
-    public void no_posicion() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public int rating() {
+      int ratio;
+            Mediocampista p = new Mediocampista();
+        ratio=(p.getAgarre()+p.getDisparo()+p.getLanzamiento()+p.getFisico()+p.getRitmo()+p.getEntrada()+p.getVision()+p.getPassing()+p.getRegate())/9;
+        
+        setRating(ratio);
+        return ratio;
     }
     
     

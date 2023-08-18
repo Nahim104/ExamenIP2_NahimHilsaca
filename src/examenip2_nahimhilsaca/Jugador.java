@@ -154,6 +154,7 @@ public abstract class Jugador {
     }
 
     public void setDisparo(int disparo) {
+        
         this.disparo = disparo;
     }
 
@@ -162,7 +163,5 @@ public abstract class Jugador {
         return "Jugador" + "nombre=" + nombre + " edad=" + edad + " nacionalidad=" + nacionalidad + " Pie habil=" + pie_habil + " Rating=" + Rating + " Equipo=" + equipo_jugador ;
     }
     
-      public abstract void poscion();
-      
-      public abstract void no_posicion();
+      public abstract int rating();
 }
