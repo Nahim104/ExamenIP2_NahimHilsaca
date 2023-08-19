@@ -88,6 +88,12 @@ public class Main extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 204));
 
+        tabbed.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                tabbedStateChanged(evt);
+            }
+        });
+
         jLabel2.setText("Ingrese su Nombre:");
 
         nom_equipo.setColumns(20);
@@ -530,11 +536,22 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_equipoestadioMouseClicked
 
     private void listartodoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listartodoMouseClicked
-            for (int i = 0; i < equipos.size(); i++) {
-                listartodo.setText("");
+         if (tabbed.getSelectedIndex()==3) {
+             listartodo.setText("");
+             
+             for (Jugador jugador : jugadores) {
+                 listartodo.append(jugador+"\n");
+             }
             
         }
+            
+            
+        
     }//GEN-LAST:event_listartodoMouseClicked
+
+    private void tabbedStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_tabbedStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tabbedStateChanged
 
     /**
      * @param args the command line arguments
