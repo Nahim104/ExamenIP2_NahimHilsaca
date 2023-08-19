@@ -536,12 +536,18 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_equipoestadioMouseClicked
 
     private void listartodoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listartodoMouseClicked
-         if (tabbed.getSelectedIndex()==3) {
+         
+        
+        String salida="";
+        if (tabbed.getSelectedIndex()==3) {
              listartodo.setText("");
              
-             for (Jugador jugador : jugadores) {
-                 listartodo.append(jugador+"\n");
-             }
+             for (int i = 0; i < jugadores.size(); i++) {
+                salida+=jugadores.get(i)+"\n";
+            }
+              for (int i = 0; i < equipos.size(); i++) {
+                salida+=equipos.get(i)+"\n";
+            }
             
         }
             
