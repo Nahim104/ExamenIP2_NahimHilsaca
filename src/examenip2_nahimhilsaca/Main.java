@@ -52,6 +52,8 @@ public class Main extends javax.swing.JFrame {
         cb_equipoestadio = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        listartodo = new javax.swing.JTextArea();
         jugador = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -220,15 +222,30 @@ public class Main extends javax.swing.JFrame {
 
         tabbed.addTab("Agregar Estadio", estadio);
 
+        listartodo.setColumns(20);
+        listartodo.setRows(5);
+        listartodo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listartodoMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(listartodo);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 943, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 673, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(187, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 712, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 523, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(142, Short.MAX_VALUE))
         );
 
         tabbed.addTab("Listar Todo", jPanel3);
@@ -512,6 +529,13 @@ public class Main extends javax.swing.JFrame {
         cb_equipo.setModel(modelo);
     }//GEN-LAST:event_cb_equipoestadioMouseClicked
 
+    private void listartodoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listartodoMouseClicked
+            for (int i = 0; i < equipos.size(); i++) {
+                listartodo.setText("");
+            
+        }
+    }//GEN-LAST:event_listartodoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -581,10 +605,12 @@ Equipo w= new Equipo();
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel jugador;
+    private javax.swing.JTextArea listartodo;
     private javax.swing.JTextArea nom_equipo;
     private javax.swing.JTextArea nom_estadio;
     private javax.swing.JTextArea pais_equipo;
