@@ -21,10 +21,10 @@ public class Equipo {
         
     }
 
-    public Equipo(String nombre_equipo, String pais, int Rating) {
+    public Equipo(String nombre_equipo, String pais) {
         this.nombre_equipo = nombre_equipo;
         this.pais = pais;
-        this.Rating = Rating;
+
     }
 
     public String getNombre_equipo() {

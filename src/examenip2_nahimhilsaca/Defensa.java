@@ -21,11 +21,17 @@ public class Defensa extends Jugador {
         super();
     }
 
-    public Defensa(int fisico, int ritmo, int entrada, String nombre, int edad, String nacionalidad, String pie_habil, Equipo equipo_jugador) {
+    public Defensa( String nombre, int edad, String nacionalidad, String pie_habil, Equipo equipo_jugador) {
         super(nombre, edad, nacionalidad, pie_habil, equipo_jugador);
-        this.fisico = fisico;
-        this.ritmo = ritmo;
-        this.entrada = entrada;
+         setAgarre(agarre);
+        setDisparo(disparo);
+        setFisico(fisico);
+        setLanzamiento(lanzamiento);
+        setRitmo(ritmo);
+        setEntrada(entrada);
+        setVision(vision);
+        setPassing(passing);
+        setRegate(regate);
     }
 
     public int getFisico() {

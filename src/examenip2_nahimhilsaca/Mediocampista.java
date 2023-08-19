@@ -21,11 +21,18 @@ public class Mediocampista extends Jugador {
         super();
     }
 
-    public Mediocampista(int vision, int passing, int regate, String nombre, int edad, String nacionalidad, String pie_habil, Equipo equipo_jugador) {
+    public Mediocampista( String nombre, int edad, String nacionalidad, String pie_habil, Equipo equipo_jugador) {
         super(nombre, edad, nacionalidad, pie_habil, equipo_jugador);
-        this.vision = vision;
-        this.passing = passing;
-        this.regate = regate;
+        
+         setAgarre(agarre);
+        setDisparo(disparo);
+        setFisico(fisico);
+        setLanzamiento(lanzamiento);
+        setRitmo(ritmo);
+        setEntrada(entrada);
+        setVision(vision);
+        setPassing(passing);
+        setRegate(regate);
     }
 
     public int getVision() {

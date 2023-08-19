@@ -24,11 +24,17 @@ public class Portero extends Jugador {
         super();
     }
 
-    public Portero(int Agarre, int lanzamieno_portero, int passing, String nombre, int edad, String nacionalidad, String pie_habil, Equipo equipo_jugador) {
+    public Portero( String nombre, int edad, String nacionalidad, String pie_habil, Equipo equipo_jugador) {
         super(nombre, edad, nacionalidad, pie_habil, equipo_jugador);
-        this.Agarre = Agarre;
-        this.lanzamieno_portero = lanzamieno_portero;
-        this.passing = passing;
+        setAgarre(agarre);
+        setDisparo(disparo);
+        setFisico(fisico);
+        setLanzamieno_portero(lanzamieno_portero);
+        setRitmo(ritmo);
+        setEntrada(entrada);
+        setVision(vision);
+        setPassing(passing);
+        setRegate(regate);
         
     }
 

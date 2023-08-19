@@ -22,11 +22,17 @@ public class Delantero extends Jugador {
         super();
     }
 
-    public Delantero(int ritmo_d, int disparo_d, int regate_d, String nombre, int edad, String nacionalidad, String pie_habil, Equipo equipo_jugador) {
+    public Delantero( String nombre, int edad, String nacionalidad, String pie_habil, Equipo equipo_jugador) {
         super(nombre, edad, nacionalidad, pie_habil, equipo_jugador);
-        this.ritmo_d = ritmo_d;
-        this.disparo_d = disparo_d;
-        this.regate_d = regate_d;
+        setAgarre(agarre);
+        setDisparo(disparo);
+        setFisico(fisico);
+        setLanzamiento(lanzamiento);
+        setRitmo(ritmo);
+        setEntrada(entrada);
+        setVision(vision);
+        setPassing(passing);
+        setRegate(regate);
     }
 
     public int getRitmo_d() {
